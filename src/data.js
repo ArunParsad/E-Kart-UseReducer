@@ -14,7 +14,7 @@ const productsData = [
     info: 'Headphones with Upto 12 Hours Playtime, Cozy Padded Earcups and Bluetooth v5.0',
     price: 50,
     image: boatHeadphone,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const productsData = [
     info: 'Qualcomm® Kryo™ 585, 7 nm Process Technology CPU frequency',
     price: 299,
     image: pocoF2,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const productsData = [
     info: 'Echo Dot is a smart speaker that can be operated by voice - even from a distance.',
     price: 100,
     image: echoDot,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const productsData = [
     info: 'Meet the iPhone X - the device that so smart that it responds to a tap, your voice, and even a glance.',
     price: 1000,
     image: iphoneX,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const productsData = [
     info: 'New Apple H1 headphone chip delivers faster wireless connection to your devices',
     price: 350,
     image: airpods,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ const productsData = [
     info: 'A smart personal assistant at your beck and call, who makes doing your everyday tasks easier',
     price: 400,
     image: homePod,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ const productsData = [
     info: 'Apple-designed M1 chip for a giant leap in CPU, GPU, and machine learning performance',
     price: 500,
     image: macMini,
-    qty: 0,
+    qty: 1,
   },
   {
     id: 8,
@@ -70,7 +70,7 @@ const productsData = [
     info: 'A12 Bionic chip gives a big boost to audio, video, and graphics, for even better game and app experiences',
     price: 200,
     image: appleTv,
-    qty: 0,
+    qty: 1,
   },
 ]
 

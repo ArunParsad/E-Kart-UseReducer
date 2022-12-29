@@ -1,8 +1,11 @@
 import React from 'react'
 import { BsFillCartCheckFill } from 'react-icons/bs'
 import logo from './assets/logo.png'
+import { useGlobalContext } from './context'
 
 const Navbar = () => {
+  const data = useGlobalContext()
+
   return (
     <>
       <div className=' bg-white py-[10px] w-full'>
@@ -15,7 +18,7 @@ const Navbar = () => {
           </div>
           <button className='relative'>
             <div className='bg-[#9FC749] text-white font-bold shadow-md rounded-full w-[30px] h-[30px] flex flex-col justify-center items-center absolute top-[-10px] right-[-10px]'>
-              0
+              {data.state.amount}
             </div>
             <BsFillCartCheckFill className='text-5xl text-[#5B5757]' />
           </button>

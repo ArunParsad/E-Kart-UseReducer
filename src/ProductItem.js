@@ -1,6 +1,9 @@
 import React from 'react'
 import { MdOutlineAddCircle } from 'react-icons/md'
-const ProductItem = ({ name, id, price, info, image }) => {
+import { useGlobalContext } from './context'
+const ProductItem = ({ name, id, price, info, image, qty }) => {
+  const { addToCart, state } = useGlobalContext()
+
   return (
     <>
       <div className='bg-white w-[250px] md:w-[300px] h-[365px] rounded-2xl overflow-hidden flex flex-col justify-between'>
@@ -14,7 +17,19 @@ const ProductItem = ({ name, id, price, info, image }) => {
           </p>
           <div className='flex justify-between items-center absolute bottom-2 w-full pr-[20px]'>
             <h2 className='text-[#5B5757] text-2xl font-bold '>${price}</h2>
-            <button className='mr-[5px] float-left'>
+            <button
+              className='mr-[5px] float-left'
+              onClick={() =>
+                addToCart({
+                  name,
+                  id,
+                  price,
+                  info,
+                  image,
+                  qty,
+                })
+              }
+            >
               <MdOutlineAddCircle className='text-[#9FC749] text-4xl' />
             </button>
           </div>
