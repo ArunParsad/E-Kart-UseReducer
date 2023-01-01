@@ -25,10 +25,9 @@ const reducer = (state, action) => {
   if (action.type === 'GET_TOTALS') {
     let totalPrice = 0
     let totalQty = 0
-    state.cart.map((product) => {
-      const price = product.price * product.qty
-      totalPrice += price
+    state.cart.forEach((product) => {
       totalQty += product.qty
+      totalPrice = product.qty * product.price
     })
 
     return { ...state, amount: totalQty, total: totalPrice }
