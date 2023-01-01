@@ -5,6 +5,7 @@ const initialState = {
   total: 0,
   amount: 0,
   cart: [],
+  showModal: false,
 }
 
 export const AppProvider = ({ children }) => {
@@ -13,10 +14,31 @@ export const AppProvider = ({ children }) => {
   const addToCart = (product) => {
     dispatch({ type: 'ADD_TO_CART', payload: product })
   }
+  const increase = (id) => {
+    dispatch({ type: 'INC', payload: id })
+  }
+  const decrease = (id) => {
+    dispatch({ type: 'DEC', payload: id })
+  }
+
+  const remove = (id) => {
+    dispatch({ type: 'REMOVE', payload: id })
+  }
+
+  const modalShow = () => {
+    dispatch({ type: 'SHOW_MODAL' })
+  }
+  const modalClose = () => {
+    dispatch({ type: 'ClOSE_MODAL' })
+  }
 
   useEffect(() => {
-    if (state.cart.length > 0) {
-      dispatch({ type: 'GET_TOTALS' })
+    dispatch({ type: 'GET_TOTALS' })
+  }, [state.cart])
+
+  useEffect(() => {
+    if (state.cart.length === 0) {
+      dispatch({ type: 'ClOSE_MODAL' })
     }
   }, [state.cart])
 
@@ -25,6 +47,11 @@ export const AppProvider = ({ children }) => {
       value={{
         state,
         addToCart,
+        modalShow,
+        modalClose,
+        increase,
+        decrease,
+        remove,
       }}
     >
       {children}

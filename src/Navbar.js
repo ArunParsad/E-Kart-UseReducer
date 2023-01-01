@@ -16,7 +16,7 @@ const Navbar = () => {
               Kart
             </div>
           </div>
-          <button className='relative'>
+          <button className='relative' onClick={data.modalShow}>
             <div className='bg-[#9FC749] text-white font-bold shadow-md rounded-full w-[30px] h-[30px] flex flex-col justify-center items-center absolute top-[-10px] right-[-10px]'>
               {data.state.amount}
             </div>

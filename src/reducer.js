@@ -16,6 +16,12 @@ const reducer = (state, action) => {
       }),
     }
   }
+  if (action.type === 'REMOVE') {
+    return {
+      ...state,
+      cart: state.cart.filter((product) => product.id !== action.payload),
+    }
+  }
   if (action.type === 'GET_TOTALS') {
     let totalPrice = 0
     let totalQty = 0
@@ -26,6 +32,46 @@ const reducer = (state, action) => {
     })
 
     return { ...state, amount: totalQty, total: totalPrice }
+  }
+
+  if (action.type === 'SHOW_MODAL') {
+    if (state.cart.length !== 0) {
+      return {
+        ...state,
+        showModal: true,
+      }
+    }
+  }
+  if (action.type === 'ClOSE_MODAL') {
+    return {
+      ...state,
+      showModal: false,
+    }
+  }
+
+  if (action.type === 'INC') {
+    return {
+      ...state,
+      cart: [...state.cart].map((product) => {
+        if (product.id === action.payload) {
+          return { ...product, qty: product.qty + 1 }
+        }
+        return product
+      }),
+    }
+  }
+  if (action.type === 'DEC') {
+    return {
+      ...state,
+      cart: [...state.cart]
+        .map((product) => {
+          if (product.id === action.payload) {
+            return { ...product, qty: product.qty - 1 }
+          }
+          return product
+        })
+        .filter((product) => product.qty !== 0),
+    }
   }
 
   return state
